@@ -88,6 +88,14 @@ public class Main extends javax.swing.JFrame {
         br_casa1 = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
+        bt_listaInicio = new javax.swing.JButton();
+        bt_listarFinal = new javax.swing.JButton();
+        bt_agregar = new javax.swing.JButton();
+        tf_unicoNombre = new javax.swing.JTextField();
+        tf_distancia = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        Inicio = new javax.swing.ButtonGroup();
+        Final = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -478,10 +486,13 @@ public class Main extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jList1);
 
+        Inicio.add(br_restaurante);
         br_restaurante.setText("restaurantes");
 
+        Inicio.add(bt_cancha);
         bt_cancha.setText("cancha");
 
+        Inicio.add(br_casa);
         br_casa.setText("casa");
         br_casa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -489,10 +500,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        Final.add(br_restaurante1);
         br_restaurante1.setText("restaurantes");
 
+        Final.add(bt_cancha1);
         bt_cancha1.setText("cancha");
 
+        Final.add(br_casa1);
         br_casa1.setText("casa");
         br_casa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -501,6 +515,14 @@ public class Main extends javax.swing.JFrame {
         });
 
         jScrollPane2.setViewportView(jList2);
+
+        bt_listaInicio.setText("Listar");
+
+        bt_listarFinal.setText("Listar");
+
+        bt_agregar.setText("Agregar->");
+
+        jButton3.setText("<-Agregra");
 
         javax.swing.GroupLayout jd_carreteraLayout = new javax.swing.GroupLayout(jd_carretera.getContentPane());
         jd_carretera.getContentPane().setLayout(jd_carreteraLayout);
@@ -513,47 +535,72 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_carreteraLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel18))
-                .addGap(147, 147, 147)
+                    .addComponent(jLabel18)
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_unicoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(66, 66, 66)
                 .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel17))
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_distancia, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jd_carreteraLayout.createSequentialGroup()
-                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(br_casa)
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addComponent(br_casa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_listaInicio))
                             .addComponent(bt_cancha)
                             .addComponent(br_restaurante))))
                 .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(br_casa1)
-                            .addComponent(bt_cancha1)
-                            .addComponent(br_restaurante1))
-                        .addGap(149, 149, 149))
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addComponent(br_casa1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_listarFinal)
+                                .addGap(48, 48, 48))
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(br_restaurante1)
+                                    .addComponent(bt_cancha1))
+                                .addGap(149, 149, 149))))
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(bt_agregar)
+                                .addGap(1, 1, 1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_carreteraLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(86, Short.MAX_VALUE))))
+                        .addContainerGap(77, Short.MAX_VALUE))))
         );
         jd_carreteraLayout.setVerticalGroup(
             jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_carreteraLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel15)
-                .addGap(34, 34, 34)
+                .addGap(31, 31, 31)
                 .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jLabel17))
-                .addGap(52, 52, 52)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_unicoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_distancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
                 .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel19))
@@ -564,19 +611,33 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bt_cancha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(br_casa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addComponent(br_casa)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_carreteraLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(bt_listaInicio)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
-                        .addComponent(br_restaurante1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_cancha1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(br_casa1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addComponent(jButton3)
+                                .addGap(71, 71, 71)
+                                .addComponent(bt_agregar))
+                            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                                .addComponent(br_restaurante1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bt_cancha1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(br_casa1)
+                                    .addComponent(bt_listarFinal))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(42, Short.MAX_VALUE))))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -912,14 +973,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Comidas;
     private javax.swing.ButtonGroup Deporte;
     private javax.swing.ButtonGroup Estado;
+    private javax.swing.ButtonGroup Final;
+    private javax.swing.ButtonGroup Inicio;
     private javax.swing.JRadioButton br_casa;
     private javax.swing.JRadioButton br_casa1;
     private javax.swing.JRadioButton br_restaurante;
     private javax.swing.JRadioButton br_restaurante1;
+    private javax.swing.JButton bt_agregar;
     private javax.swing.JRadioButton bt_cancha;
     private javax.swing.JRadioButton bt_cancha1;
+    private javax.swing.JButton bt_listaInicio;
+    private javax.swing.JButton bt_listarFinal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -978,6 +1045,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem mi_lista;
     private javax.swing.JMenuItem mi_tabla;
     private javax.swing.JMenuItem mi_tree;
+    private javax.swing.JTextField tf_distancia;
+    private javax.swing.JTextField tf_unicoNombre;
     // End of variables declaration//GEN-END:variables
 ArrayList<cancha> cancha = new ArrayList();
     ArrayList<casa> casa = new ArrayList();
