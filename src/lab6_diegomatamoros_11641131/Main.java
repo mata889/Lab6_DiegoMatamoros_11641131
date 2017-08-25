@@ -96,6 +96,13 @@ public class Main extends javax.swing.JFrame {
         tf_distancia = new javax.swing.JTextField();
         Inicio = new javax.swing.ButtonGroup();
         Final = new javax.swing.ButtonGroup();
+        jd_jtree = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_lista2 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -651,6 +658,52 @@ public class Main extends javax.swing.JFrame {
                         .addContainerGap(42, Short.MAX_VALUE))))
         );
 
+        jLabel20.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel20.setText("Listado JTree");
+
+        jScrollPane3.setViewportView(jl_lista2);
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane4.setViewportView(jTree1);
+
+        jButton3.setText("Añadir--->");
+
+        javax.swing.GroupLayout jd_jtreeLayout = new javax.swing.GroupLayout(jd_jtree.getContentPane());
+        jd_jtree.getContentPane().setLayout(jd_jtreeLayout);
+        jd_jtreeLayout.setHorizontalGroup(
+            jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_jtreeLayout.createSequentialGroup()
+                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_jtreeLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_jtreeLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+        jd_jtreeLayout.setVerticalGroup(
+            jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_jtreeLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_jtreeLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jButton3))
+                    .addGroup(jd_jtreeLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab6_diegomatamoros_11641131/olor-en-el-centro-de-la-galaxia-1080x764.jpg.imgo.jpg"))); // NOI18N
@@ -684,6 +737,7 @@ public class Main extends javax.swing.JFrame {
         });
         jm_agregar.add(jd_agregar2);
 
+        mi_cancha.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         mi_cancha.setText("Agregar cancha");
         mi_cancha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -692,6 +746,7 @@ public class Main extends javax.swing.JFrame {
         });
         jm_agregar.add(mi_cancha);
 
+        mi_casa.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         mi_casa.setText("Agregar Casa");
         mi_casa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1080,6 +1135,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_listarFinal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1092,6 +1148,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1103,12 +1160,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTree jTree1;
     private javax.swing.JButton j_agregarcancha;
     private javax.swing.JMenuItem jd_agregar2;
     private javax.swing.JDialog jd_agregarRestaurante;
     private javax.swing.JDialog jd_cancha;
     private javax.swing.JDialog jd_carretera;
     private javax.swing.JDialog jd_casa;
+    private javax.swing.JDialog jd_jtree;
+    private javax.swing.JList<String> jl_lista2;
     private javax.swing.JMenu jm_agregar;
     private javax.swing.JMenu jm_listar;
     private javax.swing.JRadioButton jr_basket;
