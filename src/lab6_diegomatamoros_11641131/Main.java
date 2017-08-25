@@ -6,6 +6,7 @@
 package lab6_diegomatamoros_11641131;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -79,7 +80,7 @@ public class Main extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lista = new javax.swing.JList<>();
         br_restaurante = new javax.swing.JRadioButton();
         bt_cancha = new javax.swing.JRadioButton();
         br_casa = new javax.swing.JRadioButton();
@@ -87,13 +88,12 @@ public class Main extends javax.swing.JFrame {
         bt_cancha1 = new javax.swing.JRadioButton();
         br_casa1 = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        lista2 = new javax.swing.JList<>();
         bt_listaInicio = new javax.swing.JButton();
         bt_listarFinal = new javax.swing.JButton();
         bt_agregar = new javax.swing.JButton();
         tf_unicoNombre = new javax.swing.JTextField();
         tf_distancia = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         Inicio = new javax.swing.ButtonGroup();
         Final = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -104,7 +104,7 @@ public class Main extends javax.swing.JFrame {
         mi_cancha = new javax.swing.JMenuItem();
         mi_casa = new javax.swing.JMenuItem();
         jm_listar = new javax.swing.JMenu();
-        mi_tabla = new javax.swing.JMenuItem();
+        mi_carretera = new javax.swing.JMenuItem();
         mi_tree = new javax.swing.JMenuItem();
         mi_lista = new javax.swing.JMenuItem();
 
@@ -484,7 +484,8 @@ public class Main extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel19.setText("LugarFinal");
 
-        jScrollPane1.setViewportView(jList1);
+        lista.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(lista);
 
         Inicio.add(br_restaurante);
         br_restaurante.setText("restaurantes");
@@ -514,15 +515,34 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane2.setViewportView(jList2);
+        lista2.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(lista2);
 
         bt_listaInicio.setText("Listar");
+        bt_listaInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_listaInicioMouseClicked(evt);
+            }
+        });
+        bt_listaInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_listaInicioActionPerformed(evt);
+            }
+        });
 
         bt_listarFinal.setText("Listar");
+        bt_listarFinal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_listarFinalMouseClicked(evt);
+            }
+        });
 
         bt_agregar.setText("Agregar->");
-
-        jButton3.setText("<-Agregra");
+        bt_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_carreteraLayout = new javax.swing.GroupLayout(jd_carretera.getContentPane());
         jd_carretera.getContentPane().setLayout(jd_carreteraLayout);
@@ -577,15 +597,9 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(bt_cancha1))
                                 .addGap(149, 149, 149))))
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
-                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_carreteraLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(bt_agregar)
-                                .addGap(1, 1, 1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_carreteraLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(6, 6, 6)
+                        .addComponent(bt_agregar)
+                        .addGap(1, 1, 1)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(77, Short.MAX_VALUE))))
         );
@@ -623,10 +637,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(37, 37, 37))
                     .addGroup(jd_carreteraLayout.createSequentialGroup()
                         .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jd_carreteraLayout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addGap(71, 71, 71)
-                                .addComponent(bt_agregar))
+                            .addComponent(bt_agregar)
                             .addGroup(jd_carreteraLayout.createSequentialGroup()
                                 .addComponent(br_restaurante1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -694,14 +705,14 @@ public class Main extends javax.swing.JFrame {
         jm_listar.setText("Listar");
         jm_listar.setEnabled(false);
 
-        mi_tabla.setText("ListarTabla");
-        mi_tabla.setEnabled(false);
-        mi_tabla.addActionListener(new java.awt.event.ActionListener() {
+        mi_carretera.setText("AñadirCarretera");
+        mi_carretera.setEnabled(false);
+        mi_carretera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_tablaActionPerformed(evt);
+                mi_carreteraActionPerformed(evt);
             }
         });
-        jm_listar.add(mi_tabla);
+        jm_listar.add(mi_carretera);
 
         mi_tree.setText("ListarTree");
         mi_tree.setEnabled(false);
@@ -755,9 +766,12 @@ public class Main extends javax.swing.JFrame {
         jd_agregarRestaurante.setVisible(true);
     }//GEN-LAST:event_jd_agregar2ActionPerformed
 
-    private void mi_tablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_tablaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mi_tablaActionPerformed
+    private void mi_carreteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_carreteraActionPerformed
+        jd_carretera.setModal(true);
+        jd_carretera.pack();
+        jd_carretera.setLocationRelativeTo(this);
+        jd_carretera.setVisible(true);
+    }//GEN-LAST:event_mi_carreteraActionPerformed
 
     private void jr_chinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_chinoActionPerformed
         // TODO add your handling code here:
@@ -797,7 +811,7 @@ public class Main extends javax.swing.JFrame {
 
             jm_listar.setEnabled(true);
             mi_lista.setEnabled(true);
-            mi_tabla.setEnabled(true);
+            mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
 
             jd_agregarRestaurante.dispose();
@@ -866,7 +880,7 @@ public class Main extends javax.swing.JFrame {
 
             jm_listar.setEnabled(true);
             mi_lista.setEnabled(true);
-            mi_tabla.setEnabled(true);
+            mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
 
             jd_cancha.dispose();
@@ -915,9 +929,9 @@ public class Main extends javax.swing.JFrame {
 
             jm_listar.setEnabled(true);
             mi_lista.setEnabled(true);
-            mi_tabla.setEnabled(true);
+            mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
-            
+
             jd_casa.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
@@ -933,6 +947,86 @@ public class Main extends javax.swing.JFrame {
     private void br_casa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_br_casa1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_br_casa1ActionPerformed
+
+    private void bt_listaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listaInicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_listaInicioActionPerformed
+
+    private void bt_listaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_listaInicioMouseClicked
+        // TODO add your handling code here:
+
+        if (br_casa.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista.getModel();
+            model.clear();
+            for (int i = 0; i < casa.size(); i++) {
+                model.addElement(casa.get(i));
+            }
+        }
+        if (br_restaurante.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista.getModel();
+            model.clear();
+            for (int i = 0; i < restaurante.size(); i++) {
+                model.addElement(restaurante.get(i));
+            }
+        }
+        if (bt_cancha.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista.getModel();
+            model.clear();
+            for (int i = 0; i < cancha.size(); i++) {
+                model.addElement(cancha.get(i));
+            }
+        }
+    }//GEN-LAST:event_bt_listaInicioMouseClicked
+
+    private void bt_listarFinalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_listarFinalMouseClicked
+        if (br_casa1.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista2.getModel();
+            model.clear();
+            for (int i = 0; i < casa.size(); i++) {
+                model.addElement(casa.get(i));
+            }
+        }
+        if (br_restaurante1.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista2.getModel();
+            model.clear();
+            for (int i = 0; i < restaurante.size(); i++) {
+                model.addElement(restaurante.get(i));
+            }
+        }
+        if (bt_cancha1.isSelected()) {
+            DefaultListModel model = (DefaultListModel) lista2.getModel();
+            model.clear();
+            for (int i = 0; i < cancha.size(); i++) {
+                model.addElement(cancha.get(i));
+            }
+        }
+    }//GEN-LAST:event_bt_listarFinalMouseClicked
+
+    private void bt_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarMouseClicked
+        // agregar
+        try {
+            DefaultListModel model = (DefaultListModel) lista.getModel();
+            DefaultListModel model1 = (DefaultListModel) lista2.getModel();
+            int unico;
+            double distancia;
+            Lugar entra;
+            Lugar sal;
+            unico = Integer.parseInt(tf_unicoNombre.getText());
+            distancia = Double.parseDouble(tf_distancia.getText());
+            entra = (Lugar) model.getElementAt(lista.getSelectedIndex());
+            sal = (Lugar) model1.getElementAt(lista2.getSelectedIndex());
+
+            carretera ca = new carretera(unico, distancia, entra, sal);
+
+            carretera.add(ca);
+            jd_carretera.dispose();
+            JOptionPane.showMessageDialog(this, "Se ha añadido la carretera");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Se ha añadido la carretera");
+        }
+
+
+    }//GEN-LAST:event_bt_agregarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -986,7 +1080,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_listarFinal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1006,8 +1099,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1040,10 +1131,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_nombre1;
     private javax.swing.JTextField jt_nombrecancha;
     private javax.swing.JRadioButton jt_tenis;
+    private javax.swing.JList<String> lista;
+    private javax.swing.JList<String> lista2;
     private javax.swing.JMenuItem mi_cancha;
+    private javax.swing.JMenuItem mi_carretera;
     private javax.swing.JMenuItem mi_casa;
     private javax.swing.JMenuItem mi_lista;
-    private javax.swing.JMenuItem mi_tabla;
     private javax.swing.JMenuItem mi_tree;
     private javax.swing.JTextField tf_distancia;
     private javax.swing.JTextField tf_unicoNombre;
@@ -1051,4 +1144,5 @@ public class Main extends javax.swing.JFrame {
 ArrayList<cancha> cancha = new ArrayList();
     ArrayList<casa> casa = new ArrayList();
     ArrayList<restaurantes> restaurante = new ArrayList();
+    ArrayList<carretera> carretera = new ArrayList();
 }
