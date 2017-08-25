@@ -9,11 +9,13 @@ public class cancha extends Lugar {
         super();
     }
 
-    public cancha(String categoria, char estado, String nombre, String direccion, carretera salida, int nivel) {
-        super(nombre, direccion, salida, nivel);
+    public cancha(String categoria, char estado, String nombre, String direccion, int nivel) {
+        super(nombre, direccion, nivel);
         this.categoria = categoria;
         this.estado = estado;
     }
+
+    
 
     public String getCategoria() {
         return categoria;

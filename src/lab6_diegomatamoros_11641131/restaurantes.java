@@ -1,7 +1,7 @@
-
 package lab6_diegomatamoros_11641131;
 
-public class restaurantes extends Lugar{
+public class restaurantes extends Lugar {
+
     String categoria;
     int calificacion;
 
@@ -9,8 +9,8 @@ public class restaurantes extends Lugar{
         super();
     }
 
-    public restaurantes(String categoria, int calificacion, String nombre, String direccion, carretera salida, int nivel) {
-        super(nombre, direccion, salida, nivel);
+    public restaurantes(String nombre, String direccion, int nivel, String categoria, int calificacion) {
+        super(nombre, direccion, nivel);
         this.categoria = categoria;
         this.calificacion = calificacion;
     }
@@ -35,6 +35,5 @@ public class restaurantes extends Lugar{
     public String toString() {
         return super.toString();
     }
-    
-    
+
 }

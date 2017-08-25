@@ -13,10 +13,9 @@ public class Lugar {
     public Lugar() {
     }
 
-    public Lugar(String nombre, String direccion, carretera salida, int nivel) {
+    public Lugar(String nombre, String direccion, int nivel) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.salida = salida;
         this.nivel = nivel;
     }
 

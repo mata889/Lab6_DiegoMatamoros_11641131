@@ -5,6 +5,9 @@
  */
 package lab6_diegomatamoros_11641131;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Family
@@ -27,21 +30,307 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_agregarRestaurante = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jt_nombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jt_direccion = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        js_nivel = new javax.swing.JSpinner();
+        jButton1 = new javax.swing.JButton();
+        jr_mexicano = new javax.swing.JRadioButton();
+        jr_chino = new javax.swing.JRadioButton();
+        jr_italiano = new javax.swing.JRadioButton();
+        jr_rapida = new javax.swing.JRadioButton();
+        js_calificacion = new javax.swing.JSpinner();
+        jLabel6 = new javax.swing.JLabel();
+        Comidas = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jm_agregar = new javax.swing.JMenu();
+        jd_agregar2 = new javax.swing.JMenuItem();
+        jm_listar = new javax.swing.JMenu();
+        mi_tabla = new javax.swing.JMenuItem();
+        mi_tree = new javax.swing.JMenuItem();
+        mi_lista = new javax.swing.JMenuItem();
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel2.setText("Agregar Restaurante");
+
+        jLabel3.setText("Nombre:");
+
+        jt_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_nombreActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Direccion:");
+
+        jt_direccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_direccionActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Nivel de Seguridad:");
+
+        jButton1.setText("Agregar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        Comidas.add(jr_mexicano);
+        jr_mexicano.setText("Mexicano");
+
+        Comidas.add(jr_chino);
+        jr_chino.setText("Chino");
+        jr_chino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_chinoActionPerformed(evt);
+            }
+        });
+
+        Comidas.add(jr_italiano);
+        jr_italiano.setText("Italiano");
+
+        Comidas.add(jr_rapida);
+        jr_rapida.setText("ComidaRapida");
+
+        js_calificacion.setModel(new javax.swing.SpinnerNumberModel(0, null, 5, 1));
+
+        jLabel6.setText("Calificacion");
+
+        javax.swing.GroupLayout jd_agregarRestauranteLayout = new javax.swing.GroupLayout(jd_agregarRestaurante.getContentPane());
+        jd_agregarRestaurante.getContentPane().setLayout(jd_agregarRestauranteLayout);
+        jd_agregarRestauranteLayout.setHorizontalGroup(
+            jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregarRestauranteLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
+            .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel2))
+                    .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                        .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(30, 30, 30))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregarRestauranteLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel4)
+                                .addGap(32, 32, 32)))
+                        .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(27, 27, 27)
+                                .addComponent(js_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jr_mexicano)
+                                    .addComponent(jLabel6))
+                                .addGap(18, 18, 18)
+                                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(js_calificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                                        .addComponent(jr_chino)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jr_italiano)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jr_rapida)))))))
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+        jd_agregarRestauranteLayout.setVerticalGroup(
+            jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_agregarRestauranteLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addGap(10, 10, 10)
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(js_nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jr_mexicano)
+                    .addComponent(jr_chino)
+                    .addComponent(jr_italiano)
+                    .addComponent(jr_rapida))
+                .addGap(34, 34, 34)
+                .addGroup(jd_agregarRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(js_calificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab6_diegomatamoros_11641131/olor-en-el-centro-de-la-galaxia-1080x764.jpg.imgo.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jm_agregar.setText("Agregar");
+        jm_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_agregarActionPerformed(evt);
+            }
+        });
+
+        jd_agregar2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        jd_agregar2.setText("Agregar Lugar");
+        jd_agregar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jd_agregar2ActionPerformed(evt);
+            }
+        });
+        jm_agregar.add(jd_agregar2);
+
+        jMenuBar1.add(jm_agregar);
+
+        jm_listar.setText("Listar");
+        jm_listar.setEnabled(false);
+
+        mi_tabla.setText("ListarTabla");
+        mi_tabla.setEnabled(false);
+        mi_tabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_tablaActionPerformed(evt);
+            }
+        });
+        jm_listar.add(mi_tabla);
+
+        mi_tree.setText("ListarTree");
+        mi_tree.setEnabled(false);
+        jm_listar.add(mi_tree);
+
+        mi_lista.setText("Listar JList");
+        mi_lista.setEnabled(false);
+        jm_listar.add(mi_lista);
+
+        jMenuBar1.add(jm_listar);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_nombreActionPerformed
+
+    private void jt_direccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_direccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_direccionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jm_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_agregarActionPerformed
+
+    }//GEN-LAST:event_jm_agregarActionPerformed
+
+    private void jd_agregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd_agregar2ActionPerformed
+        jd_agregarRestaurante.setModal(true);
+        jd_agregarRestaurante.pack();
+        jd_agregarRestaurante.setLocationRelativeTo(this);
+        jd_agregarRestaurante.setVisible(true);
+    }//GEN-LAST:event_jd_agregar2ActionPerformed
+
+    private void mi_tablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_tablaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mi_tablaActionPerformed
+
+    private void jr_chinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_chinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jr_chinoActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        //aqui se añade
+        String nombre;
+        String direccion;
+        int nivel;
+        String categoria = "";
+        int calificacion;
+        
+            nombre=jt_nombre.getText();
+            direccion=jt_direccion.getText();
+            nivel=(int) js_nivel.getValue();
+            if (jr_chino.isSelected()) {
+                categoria="chino";
+            }
+            if (jr_italiano.isSelected()) {
+                categoria="italiano";
+            }
+             if (jr_mexicano.isSelected()) {
+                categoria="mexicano";
+            }
+             if (jr_rapida.isSelected()) {
+                categoria="comida rapida";
+            }
+            calificacion=Integer.parseInt((String) js_calificacion.getValue());
+            restaurantes rest=new restaurantes(nombre,direccion,nivel,categoria,calificacion);
+            restaurante.add(rest);
+            
+            jt_nombre.setText("");
+            jt_direccion.setText("");
+            jr_chino.setText("");
+            JOptionPane.showMessageDialog(this, "Se ha agregado exitosamente");
+            
+         
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +368,31 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Comidas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem jd_agregar2;
+    private javax.swing.JDialog jd_agregarRestaurante;
+    private javax.swing.JMenu jm_agregar;
+    private javax.swing.JMenu jm_listar;
+    private javax.swing.JRadioButton jr_chino;
+    private javax.swing.JRadioButton jr_italiano;
+    private javax.swing.JRadioButton jr_mexicano;
+    private javax.swing.JRadioButton jr_rapida;
+    private javax.swing.JSpinner js_calificacion;
+    private javax.swing.JSpinner js_nivel;
+    private javax.swing.JTextField jt_direccion;
+    private javax.swing.JTextField jt_nombre;
+    private javax.swing.JMenuItem mi_lista;
+    private javax.swing.JMenuItem mi_tabla;
+    private javax.swing.JMenuItem mi_tree;
     // End of variables declaration//GEN-END:variables
+ArrayList<restaurantes> restaurante = new ArrayList();
 }
