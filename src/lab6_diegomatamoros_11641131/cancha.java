@@ -3,17 +3,20 @@ package lab6_diegomatamoros_11641131;
 
 public class cancha extends Lugar {
     String categoria;
-    char estado;
+    String estado;
+    
 
     public cancha() {
         super();
     }
 
-    public cancha(String categoria, char estado, String nombre, String direccion, int nivel) {
+    public cancha(String nombre,String direccion,  int nivel,String categoria, String estado) {
         super(nombre, direccion, nivel);
         this.categoria = categoria;
         this.estado = estado;
     }
+
+    
 
     
 
@@ -25,11 +28,11 @@ public class cancha extends Lugar {
         this.categoria = categoria;
     }
 
-    public char getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(char estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

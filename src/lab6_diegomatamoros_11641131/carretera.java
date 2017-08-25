@@ -1,21 +1,20 @@
 
 package lab6_diegomatamoros_11641131;
 
-public class carretera extends Lugar{
+public class carretera {
     int unico;
     double distancia;
     Lugar entra,sal;
 
     public carretera() {
-        super();
+        
     }
 
-    public carretera(int unico, double distancia, Lugar entrada, Lugar salida, String nombre, String direccion, int nivel) {
-        super(nombre, direccion, nivel);
+    public carretera(int unico, double distancia, Lugar entra, Lugar sal) {
         this.unico = unico;
         this.distancia = distancia;
-        this.entra = entrada;
-        this.sal = salida;
+        this.entra = entra;
+        this.sal = sal;
     }
 
     public int getUnico() {
@@ -38,17 +37,19 @@ public class carretera extends Lugar{
         return entra;
     }
 
-    public void setEntrada(Lugar entrada) {
-        this.entra = entrada;
+    public void setEntra(Lugar entra) {
+        this.entra = entra;
     }
 
     public Lugar getSal() {
         return sal;
     }
 
-    public void setSalida(Lugar salida) {
-        this.sal = salida;
+    public void setSal(Lugar sal) {
+        this.sal = sal;
     }
+
+    
 
     @Override
     public String toString() {

@@ -46,11 +46,55 @@ public class Main extends javax.swing.JFrame {
         js_calificacion = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         Comidas = new javax.swing.ButtonGroup();
+        jd_cancha = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jt_nombrecancha = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jt_direccioncancha = new javax.swing.JTextField();
+        js_nivelcancha = new javax.swing.JSpinner();
+        jLabel10 = new javax.swing.JLabel();
+        jt_football = new javax.swing.JRadioButton();
+        jr_basket = new javax.swing.JRadioButton();
+        jt_tenis = new javax.swing.JRadioButton();
+        jr_volleyball = new javax.swing.JRadioButton();
+        jr_estadoOcupado = new javax.swing.JRadioButton();
+        jr_estadoDisponible = new javax.swing.JRadioButton();
+        j_agregarcancha = new javax.swing.JButton();
+        Estado = new javax.swing.ButtonGroup();
+        Deporte = new javax.swing.ButtonGroup();
+        jd_casa = new javax.swing.JDialog();
+        jt_nombre1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jt_direccion1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        js_nivel1 = new javax.swing.JSpinner();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jd_carretera = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        br_restaurante = new javax.swing.JRadioButton();
+        bt_cancha = new javax.swing.JRadioButton();
+        br_casa = new javax.swing.JRadioButton();
+        br_restaurante1 = new javax.swing.JRadioButton();
+        bt_cancha1 = new javax.swing.JRadioButton();
+        br_casa1 = new javax.swing.JRadioButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_agregar = new javax.swing.JMenu();
         jd_agregar2 = new javax.swing.JMenuItem();
+        mi_cancha = new javax.swing.JMenuItem();
+        mi_casa = new javax.swing.JMenuItem();
         jm_listar = new javax.swing.JMenu();
         mi_tabla = new javax.swing.JMenuItem();
         mi_tree = new javax.swing.JMenuItem();
@@ -190,6 +234,351 @@ public class Main extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel7.setText("Agregar Cancha");
+
+        jLabel8.setText("Nombre");
+
+        jLabel9.setText("Direccion");
+
+        jLabel10.setText("Nivel");
+
+        Deporte.add(jt_football);
+        jt_football.setText("Football");
+
+        Deporte.add(jr_basket);
+        jr_basket.setText("Basket");
+
+        Deporte.add(jt_tenis);
+        jt_tenis.setText("Tenis");
+
+        Deporte.add(jr_volleyball);
+        jr_volleyball.setText("Volleyball");
+        jr_volleyball.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_volleyballActionPerformed(evt);
+            }
+        });
+
+        Estado.add(jr_estadoOcupado);
+        jr_estadoOcupado.setText("Ocupado");
+        jr_estadoOcupado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_estadoOcupadoActionPerformed(evt);
+            }
+        });
+
+        Estado.add(jr_estadoDisponible);
+        jr_estadoDisponible.setText("Disponible");
+        jr_estadoDisponible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_estadoDisponibleActionPerformed(evt);
+            }
+        });
+
+        j_agregarcancha.setText("Agregar");
+        j_agregarcancha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                j_agregarcanchaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_canchaLayout = new javax.swing.GroupLayout(jd_cancha.getContentPane());
+        jd_cancha.getContentPane().setLayout(jd_canchaLayout);
+        jd_canchaLayout.setHorizontalGroup(
+            jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_canchaLayout.createSequentialGroup()
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jt_football)
+                    .addGroup(jd_canchaLayout.createSequentialGroup()
+                        .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_canchaLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jd_canchaLayout.createSequentialGroup()
+                                            .addComponent(jLabel8)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jt_nombrecancha, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jd_canchaLayout.createSequentialGroup()
+                                            .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel9)
+                                                .addComponent(jLabel10))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(js_nivelcancha)
+                                                .addComponent(jt_direccioncancha))))
+                                    .addGroup(jd_canchaLayout.createSequentialGroup()
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jr_basket)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jt_tenis))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_canchaLayout.createSequentialGroup()
+                                .addGap(155, 155, 155)
+                                .addComponent(jLabel7)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jr_estadoOcupado)
+                        .addGap(18, 18, 18)
+                        .addComponent(jr_estadoDisponible)))
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(jd_canchaLayout.createSequentialGroup()
+                .addComponent(jr_volleyball)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(j_agregarcancha, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107))
+        );
+        jd_canchaLayout.setVerticalGroup(
+            jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_canchaLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel7)
+                .addGap(36, 36, 36)
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jt_nombrecancha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_canchaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jt_direccioncancha, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_canchaLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jr_estadoOcupado)
+                            .addComponent(jr_estadoDisponible))))
+                .addGap(15, 15, 15)
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(js_nivelcancha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(35, 35, 35)
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_football)
+                    .addComponent(jr_basket)
+                    .addComponent(jt_tenis))
+                .addGroup(jd_canchaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_canchaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jr_volleyball)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_canchaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                        .addComponent(j_agregarcancha, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
+        );
+
+        jt_nombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_nombre1ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Direccion:");
+
+        jt_direccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_direccion1ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Nivel de Seguridad:");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel13.setText("Agregar Casa");
+
+        jLabel14.setText("Nombre:");
+
+        jButton2.setText("Agregar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton2KeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_casaLayout = new javax.swing.GroupLayout(jd_casa.getContentPane());
+        jd_casa.getContentPane().setLayout(jd_casaLayout);
+        jd_casaLayout.setHorizontalGroup(
+            jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_casaLayout.createSequentialGroup()
+                .addContainerGap(349, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(212, 212, 212))
+            .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_casaLayout.createSequentialGroup()
+                    .addGap(15, 15, 15)
+                    .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jd_casaLayout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(jLabel13))
+                        .addGroup(jd_casaLayout.createSequentialGroup()
+                            .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jd_casaLayout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addComponent(jLabel14)
+                                    .addGap(30, 30, 30))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_casaLayout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addGap(32, 32, 32)))
+                            .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jt_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jd_casaLayout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addGap(27, 27, 27)
+                            .addComponent(js_nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(442, Short.MAX_VALUE)))
+        );
+        jd_casaLayout.setVerticalGroup(
+            jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_casaLayout.createSequentialGroup()
+                .addContainerGap(242, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
+            .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_casaLayout.createSequentialGroup()
+                    .addGap(65, 65, 65)
+                    .addComponent(jLabel13)
+                    .addGap(10, 10, 10)
+                    .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(jt_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(14, 14, 14)
+                    .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jd_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12)
+                        .addComponent(js_nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(65, Short.MAX_VALUE)))
+        );
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel15.setText("Agregar Carretera");
+
+        jLabel16.setText("Numero unico:");
+
+        jLabel17.setText("Distancia:");
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel18.setText("LugarInicio");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel19.setText("LugarFinal");
+
+        jScrollPane1.setViewportView(jList1);
+
+        br_restaurante.setText("restaurantes");
+
+        bt_cancha.setText("cancha");
+
+        br_casa.setText("casa");
+        br_casa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                br_casaActionPerformed(evt);
+            }
+        });
+
+        br_restaurante1.setText("restaurantes");
+
+        bt_cancha1.setText("cancha");
+
+        br_casa1.setText("casa");
+        br_casa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                br_casa1ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(jList2);
+
+        javax.swing.GroupLayout jd_carreteraLayout = new javax.swing.GroupLayout(jd_carretera.getContentPane());
+        jd_carretera.getContentPane().setLayout(jd_carreteraLayout);
+        jd_carreteraLayout.setHorizontalGroup(
+            jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_carreteraLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(148, 148, 148))
+            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel18))
+                .addGap(147, 147, 147)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel17))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(br_casa)
+                            .addComponent(bt_cancha)
+                            .addComponent(br_restaurante))))
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(br_casa1)
+                            .addComponent(bt_cancha1)
+                            .addComponent(br_restaurante1))
+                        .addGap(149, 149, 149))
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(86, Short.MAX_VALUE))))
+        );
+        jd_carreteraLayout.setVerticalGroup(
+            jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_carreteraLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel15)
+                .addGap(34, 34, 34)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17))
+                .addGap(52, 52, 52)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_carreteraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addComponent(br_restaurante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_cancha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(br_casa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
+                    .addGroup(jd_carreteraLayout.createSequentialGroup()
+                        .addComponent(br_restaurante1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_cancha1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(br_casa1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab6_diegomatamoros_11641131/olor-en-el-centro-de-la-galaxia-1080x764.jpg.imgo.jpg"))); // NOI18N
@@ -215,13 +604,29 @@ public class Main extends javax.swing.JFrame {
         });
 
         jd_agregar2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
-        jd_agregar2.setText("Agregar Lugar");
+        jd_agregar2.setText("Agregar Restauratne");
         jd_agregar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jd_agregar2ActionPerformed(evt);
             }
         });
         jm_agregar.add(jd_agregar2);
+
+        mi_cancha.setText("Agregar cancha");
+        mi_cancha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_canchaActionPerformed(evt);
+            }
+        });
+        jm_agregar.add(mi_cancha);
+
+        mi_casa.setText("Agregar Casa");
+        mi_casa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_casaActionPerformed(evt);
+            }
+        });
+        jm_agregar.add(mi_casa);
 
         jMenuBar1.add(jm_agregar);
 
@@ -304,33 +709,169 @@ public class Main extends javax.swing.JFrame {
         int nivel;
         String categoria = "";
         int calificacion;
-        
-            nombre=jt_nombre.getText();
-            direccion=jt_direccion.getText();
-            nivel=(int) js_nivel.getValue();
+        try {
+            nombre = jt_nombre.getText();
+            direccion = jt_direccion.getText();
+            nivel = (int) js_nivel.getValue();
             if (jr_chino.isSelected()) {
-                categoria="chino";
+                categoria = "chino";
             }
             if (jr_italiano.isSelected()) {
-                categoria="italiano";
+                categoria = "italiano";
             }
-             if (jr_mexicano.isSelected()) {
-                categoria="mexicano";
+            if (jr_mexicano.isSelected()) {
+                categoria = "mexicano";
             }
-             if (jr_rapida.isSelected()) {
-                categoria="comida rapida";
+            if (jr_rapida.isSelected()) {
+                categoria = "comida rapida";
             }
-            calificacion=Integer.parseInt((String) js_calificacion.getValue());
-            restaurantes rest=new restaurantes(nombre,direccion,nivel,categoria,calificacion);
+            calificacion = (int) js_calificacion.getValue();
+            restaurantes rest = new restaurantes(nombre, direccion, nivel, categoria, calificacion);
             restaurante.add(rest);
-            
+
             jt_nombre.setText("");
             jt_direccion.setText("");
             jr_chino.setText("");
             JOptionPane.showMessageDialog(this, "Se ha agregado exitosamente");
-            
-         
+
+            jm_listar.setEnabled(true);
+            mi_lista.setEnabled(true);
+            mi_tabla.setEnabled(true);
+            mi_tree.setEnabled(true);
+
+            jd_agregarRestaurante.dispose();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Acaba de ocurrir un error");
+        }
+
+
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void mi_canchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_canchaActionPerformed
+        //agregar cancha
+        jd_cancha.setModal(true);
+        jd_cancha.pack();
+        jd_cancha.setLocationRelativeTo(this);
+        jd_cancha.setVisible(true);
+
+    }//GEN-LAST:event_mi_canchaActionPerformed
+
+    private void jr_volleyballActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_volleyballActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jr_volleyballActionPerformed
+
+    private void jr_estadoOcupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_estadoOcupadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jr_estadoOcupadoActionPerformed
+
+    private void jr_estadoDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_estadoDisponibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jr_estadoDisponibleActionPerformed
+
+    private void j_agregarcanchaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j_agregarcanchaMouseClicked
+        String nombre;
+        String direccion;
+        int nivel;
+        String categoria = "";
+        String estado = "";
+
+        try {
+            nombre = jt_nombrecancha.getText();
+            direccion = jt_direccioncancha.getText();
+            nivel = (int) js_nivelcancha.getValue();
+            if (jt_football.isSelected()) {
+                categoria = "Football";
+            }
+            if (jt_tenis.isSelected()) {
+                categoria = "Tenis";
+            }
+            if (jr_basket.isSelected()) {
+                categoria = "BasketBall";
+            }
+            if (jr_volleyball.isSelected()) {
+                categoria = "Volleyball";
+            }
+            if (jr_estadoDisponible.isSelected()) {
+                estado = "Disponible";
+            }
+            if (jr_estadoOcupado.isSelected()) {
+                estado = "Ocupado";
+            }
+            cancha c = new cancha(nombre, direccion, nivel, categoria, estado);
+            cancha.add(c);
+
+            JOptionPane.showMessageDialog(this, "Se ha agregado exitosamente");
+
+            jm_listar.setEnabled(true);
+            mi_lista.setEnabled(true);
+            mi_tabla.setEnabled(true);
+            mi_tree.setEnabled(true);
+
+            jd_cancha.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
+        }
+
+
+    }//GEN-LAST:event_j_agregarcanchaMouseClicked
+
+    private void mi_casaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_casaActionPerformed
+        jd_casa.setModal(true);
+        jd_casa.pack();
+        jd_casa.setLocationRelativeTo(this);
+        jd_casa.setVisible(true);
+    }//GEN-LAST:event_mi_casaActionPerformed
+
+    private void jt_nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_nombre1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_nombre1ActionPerformed
+
+    private void jt_direccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_direccion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_direccion1ActionPerformed
+
+    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2KeyPressed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        String nombre;
+        String direccion;
+        int nivel;
+        try {
+            nombre = jt_nombre1.getText();
+            direccion = jt_direccion1.getText();
+            nivel = (int) js_nivel1.getValue();
+
+            casa c = new casa(nombre, direccion, nivel);
+            casa.add(c);
+            JOptionPane.showMessageDialog(this, "Se ha agregado exitosamente");
+
+            jm_listar.setEnabled(true);
+            mi_lista.setEnabled(true);
+            mi_tabla.setEnabled(true);
+            mi_tree.setEnabled(true);
+            
+            jd_casa.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
+        }
+
+
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void br_casaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_br_casaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_br_casaActionPerformed
+
+    private void br_casa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_br_casa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_br_casa1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,30 +910,76 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Comidas;
+    private javax.swing.ButtonGroup Deporte;
+    private javax.swing.ButtonGroup Estado;
+    private javax.swing.JRadioButton br_casa;
+    private javax.swing.JRadioButton br_casa1;
+    private javax.swing.JRadioButton br_restaurante;
+    private javax.swing.JRadioButton br_restaurante1;
+    private javax.swing.JRadioButton bt_cancha;
+    private javax.swing.JRadioButton bt_cancha1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton j_agregarcancha;
     private javax.swing.JMenuItem jd_agregar2;
     private javax.swing.JDialog jd_agregarRestaurante;
+    private javax.swing.JDialog jd_cancha;
+    private javax.swing.JDialog jd_carretera;
+    private javax.swing.JDialog jd_casa;
     private javax.swing.JMenu jm_agregar;
     private javax.swing.JMenu jm_listar;
+    private javax.swing.JRadioButton jr_basket;
     private javax.swing.JRadioButton jr_chino;
+    private javax.swing.JRadioButton jr_estadoDisponible;
+    private javax.swing.JRadioButton jr_estadoOcupado;
     private javax.swing.JRadioButton jr_italiano;
     private javax.swing.JRadioButton jr_mexicano;
     private javax.swing.JRadioButton jr_rapida;
+    private javax.swing.JRadioButton jr_volleyball;
     private javax.swing.JSpinner js_calificacion;
     private javax.swing.JSpinner js_nivel;
+    private javax.swing.JSpinner js_nivel1;
+    private javax.swing.JSpinner js_nivelcancha;
     private javax.swing.JTextField jt_direccion;
+    private javax.swing.JTextField jt_direccion1;
+    private javax.swing.JTextField jt_direccioncancha;
+    private javax.swing.JRadioButton jt_football;
     private javax.swing.JTextField jt_nombre;
+    private javax.swing.JTextField jt_nombre1;
+    private javax.swing.JTextField jt_nombrecancha;
+    private javax.swing.JRadioButton jt_tenis;
+    private javax.swing.JMenuItem mi_cancha;
+    private javax.swing.JMenuItem mi_casa;
     private javax.swing.JMenuItem mi_lista;
     private javax.swing.JMenuItem mi_tabla;
     private javax.swing.JMenuItem mi_tree;
     // End of variables declaration//GEN-END:variables
-ArrayList<restaurantes> restaurante = new ArrayList();
+ArrayList<cancha> cancha = new ArrayList();
+    ArrayList<casa> casa = new ArrayList();
+    ArrayList<restaurantes> restaurante = new ArrayList();
 }
