@@ -8,6 +8,8 @@ package lab6_diegomatamoros_11641131;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -100,17 +102,24 @@ public class Main extends javax.swing.JFrame {
         Final = new javax.swing.ButtonGroup();
         jd_jtree = new javax.swing.JDialog();
         jLabel20 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jl_listatree = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jtree_lista = new javax.swing.JTree();
-        jb_añador = new javax.swing.JButton();
-        rb_resta = new javax.swing.JRadioButton();
-        rb_carre = new javax.swing.JRadioButton();
-        rb_casa = new javax.swing.JRadioButton();
         jb_actualizar = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         Jtree = new javax.swing.ButtonGroup();
         jd_jlist = new javax.swing.JDialog();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jt_posicion = new javax.swing.JTextField();
+        bt_actuaPosi = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_listaa = new javax.swing.JList<>();
+        jd_tabla = new javax.swing.JDialog();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        jb_actualiarlista = new javax.swing.JButton();
+        Tabla = new javax.swing.JPopupMenu();
+        Eliminar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -122,6 +131,7 @@ public class Main extends javax.swing.JFrame {
         mi_carretera = new javax.swing.JMenuItem();
         mi_tree = new javax.swing.JMenuItem();
         mi_lista = new javax.swing.JMenuItem();
+        mi_table = new javax.swing.JMenuItem();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Agregar Restaurante");
@@ -669,33 +679,21 @@ public class Main extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel20.setText("Listado JTree");
 
-        jl_listatree.setModel(new DefaultListModel());
-        jScrollPane3.setViewportView(jl_listatree);
-
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         jtree_lista.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane4.setViewportView(jtree_lista);
 
-        jb_añador.setText("Añadir--->");
-        jb_añador.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_añadorMouseClicked(evt);
-            }
-        });
-
-        Jtree.add(rb_resta);
-        rb_resta.setText("Restaurantes");
-
-        Jtree.add(rb_carre);
-        rb_carre.setText("Cancha");
-
-        Jtree.add(rb_casa);
-        rb_casa.setText("Casa");
-
-        jb_actualizar.setText("Actualizar");
+        jb_actualizar.setText("Restaurante");
         jb_actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_actualizarMouseClicked(evt);
+            }
+        });
+
+        jButton3.setText("Cancha");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
             }
         });
 
@@ -706,67 +704,156 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_jtreeLayout.createSequentialGroup()
                 .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_jtreeLayout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(175, 175, 175)
+                        .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jd_jtreeLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rb_resta)
-                            .addGroup(jd_jtreeLayout.createSequentialGroup()
-                                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rb_carre)
-                                    .addComponent(rb_casa))
-                                .addGap(42, 42, 42)
-                                .addComponent(jb_actualizar))))
-                    .addGroup(jd_jtreeLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jb_añador)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addComponent(jb_actualizar)
+                        .addGap(117, 117, 117)
+                        .addComponent(jButton3)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jd_jtreeLayout.setVerticalGroup(
             jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_jtreeLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
-                .addComponent(rb_resta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_jtreeLayout.createSequentialGroup()
-                        .addComponent(rb_carre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rb_casa)
-                        .addGap(9, 9, 9)
-                        .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jtreeLayout.createSequentialGroup()
-                                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(101, 101, 101))
-                            .addGroup(jd_jtreeLayout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(jb_añador)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jd_jtreeLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jb_actualizar)
-                        .addContainerGap())))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jd_jtreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_actualizar)
+                    .addComponent(jButton3))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel21.setText("Listado Jlist");
+
+        jLabel22.setText("Posicion actual:");
+
+        bt_actuaPosi.setText("Actualizar");
+        bt_actuaPosi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_actuaPosiMouseClicked(evt);
+            }
+        });
+        bt_actuaPosi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_actuaPosiActionPerformed(evt);
+            }
+        });
+
+        jl_listaa.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_listaa);
 
         javax.swing.GroupLayout jd_jlistLayout = new javax.swing.GroupLayout(jd_jlist.getContentPane());
         jd_jlist.getContentPane().setLayout(jd_jlistLayout);
         jd_jlistLayout.setHorizontalGroup(
             jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGroup(jd_jlistLayout.createSequentialGroup()
+                .addGroup(jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_jlistLayout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(jLabel21))
+                    .addGroup(jd_jlistLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(bt_actuaPosi)
+                                .addGroup(jd_jlistLayout.createSequentialGroup()
+                                    .addComponent(jLabel22)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jt_posicion, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jd_jlistLayout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jd_jlistLayout.setVerticalGroup(
             jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(jd_jlistLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel21)
+                .addGap(26, 26, 26)
+                .addGroup(jd_jlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jt_posicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(bt_actuaPosi)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Restaurante", "Cancha", "Carretera"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(tabla);
+
+        jb_actualiarlista.setText("Actualizar");
+        jb_actualiarlista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_actualiarlistaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_tablaLayout = new javax.swing.GroupLayout(jd_tabla.getContentPane());
+        jd_tabla.getContentPane().setLayout(jd_tablaLayout);
+        jd_tablaLayout.setHorizontalGroup(
+            jd_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_tablaLayout.createSequentialGroup()
+                .addContainerGap(82, Short.MAX_VALUE)
+                .addComponent(jb_actualiarlista, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(105, 105, 105))
+        );
+        jd_tablaLayout.setVerticalGroup(
+            jd_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_tablaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jb_actualiarlista)
+                .addGap(36, 36, 36))
+        );
+
+        Eliminar.setText("jMenuItem1");
+        Tabla.add(Eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -849,7 +936,31 @@ public class Main extends javax.swing.JFrame {
 
         mi_lista.setText("Listar JList");
         mi_lista.setEnabled(false);
+        mi_lista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mi_listaMouseClicked(evt);
+            }
+        });
+        mi_lista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_listaActionPerformed(evt);
+            }
+        });
         jm_listar.add(mi_lista);
+
+        mi_table.setText("Listar JTable");
+        mi_table.setEnabled(false);
+        mi_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mi_tableMouseClicked(evt);
+            }
+        });
+        mi_table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_tableActionPerformed(evt);
+            }
+        });
+        jm_listar.add(mi_table);
 
         jMenuBar1.add(jm_listar);
 
@@ -942,7 +1053,7 @@ public class Main extends javax.swing.JFrame {
             mi_lista.setEnabled(true);
             mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
-
+            mi_table.setEnabled(true);
             jd_agregarRestaurante.dispose();
 
         } catch (Exception e) {
@@ -1011,6 +1122,7 @@ public class Main extends javax.swing.JFrame {
             mi_lista.setEnabled(true);
             mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
+            mi_table.setEnabled(true);
 
             jd_cancha.dispose();
         } catch (Exception e) {
@@ -1060,7 +1172,7 @@ public class Main extends javax.swing.JFrame {
             mi_lista.setEnabled(true);
             mi_carretera.setEnabled(true);
             mi_tree.setEnabled(true);
-
+            mi_table.setEnabled(true);
             jd_casa.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
@@ -1158,26 +1270,49 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_agregarMouseClicked
 
     private void jb_actualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_actualizarMouseClicked
-        if (rb_casa.isSelected()) {
-            DefaultListModel model = (DefaultListModel) jl_listatree.getModel();
-            model.clear();
-            for (int i = 0; i < casa.size(); i++) {
-                model.addElement(casa.get(i));
+        DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree_lista.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+        raiz.removeAllChildren();
+        modeloARBOL.reload();
+
+        for (int i = 0; i < restaurante.size(); i++) {
+
+            modeloARBOL = (DefaultTreeModel) jtree_lista.getModel();
+            raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+
+            String categoria = restaurante.get(i).getCategoria();
+            String nombre = restaurante.get(i).getNombre();
+            int calificacion = restaurante.get(i).getCalificacion();
+            String direccion = restaurante.get(i).getDireccion();
+            int seguridad = restaurante.get(i).getCalificacion();
+
+            int centinela = -1;
+            for (int j = 0; j < raiz.getChildCount(); j++) {
+                if (raiz.getChildAt(j).toString().equals(categoria)) {
+
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new restaurantes(nombre, direccion, calificacion, categoria, seguridad)
+                            );
+                    ((DefaultMutableTreeNode) raiz.getChildAt(j)).add(p);
+                    centinela = 1;
+                }
+
             }
-        }
-        if (rb_resta.isSelected()) {
-            DefaultListModel model = (DefaultListModel) jl_listatree.getModel();
-            model.clear();
-            for (int i = 0; i < restaurante.size(); i++) {
-                model.addElement(restaurante.get(i));
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n
+                        = new DefaultMutableTreeNode(categoria);
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode(
+                                new restaurantes(nombre, direccion, calificacion, categoria, seguridad)
+                        );
+                n.add(p);
+                raiz.add(n);
             }
-        }
-        if (rb_carre.isSelected()) {
-            DefaultListModel model = (DefaultListModel) jl_listatree.getModel();
-            model.clear();
-            for (int i = 0; i < cancha.size(); i++) {
-                model.addElement(cancha.get(i));
-            }
+
+            modeloARBOL.reload();
+
         }
 
     }//GEN-LAST:event_jb_actualizarMouseClicked
@@ -1189,16 +1324,119 @@ public class Main extends javax.swing.JFrame {
         jd_jtree.setVisible(true);
     }//GEN-LAST:event_mi_treeActionPerformed
 
-    private void jb_añadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_añadorMouseClicked
-        
-    }//GEN-LAST:event_jb_añadorMouseClicked
-
     private void jm_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_listarActionPerformed
-         jd_jlist.setModal(true);
+
+    }//GEN-LAST:event_jm_listarActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree_lista.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+        raiz.removeAllChildren();
+        modeloARBOL.reload();
+
+        for (int i = 0; i < cancha.size(); i++) {
+
+            modeloARBOL = (DefaultTreeModel) jtree_lista.getModel();
+            raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+
+            String categoria = cancha.get(i).getCategoria();
+            String nombre = cancha.get(i).getNombre();
+            int nivel = cancha.get(i).getNivel();
+            String direccion = cancha.get(i).getDireccion();
+            String estado = cancha.get(i).getEstado();
+
+            int centinela = -1;
+            for (int j = 0; j < raiz.getChildCount(); j++) {
+                if (raiz.getChildAt(j).toString().equals(categoria)) {
+
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new cancha(nombre, direccion, nivel, categoria, estado)
+                            );
+                    ((DefaultMutableTreeNode) raiz.getChildAt(j)).add(p);
+                    centinela = 1;
+                }
+
+            }
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n
+                        = new DefaultMutableTreeNode(categoria);
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode(
+                                new cancha(nombre, direccion, nivel, categoria, estado)
+                        );
+                n.add(p);
+                raiz.add(n);
+            }
+
+            modeloARBOL.reload();
+
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void bt_actuaPosiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_actuaPosiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_actuaPosiActionPerformed
+
+    private void bt_actuaPosiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_actuaPosiMouseClicked
+        //posicion
+        int posicion;
+        posicion = Integer.parseInt(jt_posicion.getText());
+        for (int i = 0; i < carretera.size(); i++) {
+            if (posicion - carretera.get(i).getDistancia() < 0) {
+                DefaultListModel model = (DefaultListModel) jl_listaa.getModel();
+                model.clear();
+                model.addElement(carretera.get(i).getEntra());
+            }
+        }
+
+    }//GEN-LAST:event_bt_actuaPosiMouseClicked
+
+    private void mi_listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mi_listaMouseClicked
+
+    }//GEN-LAST:event_mi_listaMouseClicked
+
+    private void mi_listaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_listaActionPerformed
+        // TODO add your handling code here
+        jd_jlist.setModal(true);
         jd_jlist.pack();
         jd_jlist.setLocationRelativeTo(this);
-       jd_jlist.setVisible(true);
-    }//GEN-LAST:event_jm_listarActionPerformed
+        jd_jlist.setVisible(true);
+    }//GEN-LAST:event_mi_listaActionPerformed
+
+    private void jb_actualiarlistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_actualiarlistaMouseClicked
+        TableModel modelo = (TableModel) tabla.getModel();
+
+        for (int i = 0; i < restaurante.size(); i++) {
+            modelo.setValueAt(restaurante.get(i).getNombre(), i, 0);
+        }
+        for (int i = 0; i < cancha.size(); i++) {
+            modelo.setValueAt(cancha.get(i).getNombre(), i, 1);
+        }
+        for (int i = 0; i < carretera.size(); i++) {
+            modelo.setValueAt(carretera.get(i).getDistancia(), i, 2);
+        }
+
+    }//GEN-LAST:event_jb_actualiarlistaMouseClicked
+
+    private void mi_tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_tableActionPerformed
+        // TODO add your handling code here:
+        jd_tabla.setModal(true);
+        jd_tabla.pack();
+        jd_tabla.setLocationRelativeTo(this);
+        jd_tabla.setVisible(true);
+    }//GEN-LAST:event_mi_tableActionPerformed
+
+    private void mi_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mi_tableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mi_tableMouseClicked
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+
+// TODO add your handling code here:
+       
+    }//GEN-LAST:event_tablaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1238,14 +1476,17 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Comidas;
     private javax.swing.ButtonGroup Deporte;
+    private javax.swing.JMenuItem Eliminar;
     private javax.swing.ButtonGroup Estado;
     private javax.swing.ButtonGroup Final;
     private javax.swing.ButtonGroup Inicio;
     private javax.swing.ButtonGroup Jtree;
+    private javax.swing.JPopupMenu Tabla;
     private javax.swing.JRadioButton br_casa;
     private javax.swing.JRadioButton br_casa1;
     private javax.swing.JRadioButton br_restaurante;
     private javax.swing.JRadioButton br_restaurante1;
+    private javax.swing.JButton bt_actuaPosi;
     private javax.swing.JButton bt_agregar;
     private javax.swing.JRadioButton bt_cancha;
     private javax.swing.JRadioButton bt_cancha1;
@@ -1253,6 +1494,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_listarFinal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1266,6 +1508,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1279,9 +1523,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JButton j_agregarcancha;
+    private javax.swing.JButton jb_actualiarlista;
     private javax.swing.JButton jb_actualizar;
-    private javax.swing.JButton jb_añador;
     private javax.swing.JMenuItem jd_agregar2;
     private javax.swing.JDialog jd_agregarRestaurante;
     private javax.swing.JDialog jd_cancha;
@@ -1289,7 +1534,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog jd_casa;
     private javax.swing.JDialog jd_jlist;
     private javax.swing.JDialog jd_jtree;
-    private javax.swing.JList<String> jl_listatree;
+    private javax.swing.JDialog jd_tabla;
+    private javax.swing.JList<String> jl_listaa;
     private javax.swing.JMenu jm_agregar;
     private javax.swing.JMenu jm_listar;
     private javax.swing.JRadioButton jr_basket;
@@ -1311,6 +1557,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_nombre;
     private javax.swing.JTextField jt_nombre1;
     private javax.swing.JTextField jt_nombrecancha;
+    private javax.swing.JTextField jt_posicion;
     private javax.swing.JRadioButton jt_tenis;
     private javax.swing.JTree jtree_lista;
     private javax.swing.JList<String> lista;
@@ -1319,10 +1566,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem mi_carretera;
     private javax.swing.JMenuItem mi_casa;
     private javax.swing.JMenuItem mi_lista;
+    private javax.swing.JMenuItem mi_table;
     private javax.swing.JMenuItem mi_tree;
-    private javax.swing.JRadioButton rb_carre;
-    private javax.swing.JRadioButton rb_casa;
-    private javax.swing.JRadioButton rb_resta;
+    private javax.swing.JTable tabla;
     private javax.swing.JTextField tf_distancia;
     private javax.swing.JTextField tf_unicoNombre;
     // End of variables declaration//GEN-END:variables
